@@ -1,13 +1,21 @@
-name: "Terraform ad github action"
+name: shell commands
 on:
-  push:
-    branches:
-    - master
-pull_request:
+- push
+env:
+  ACCESS_KEY: ${{ secrets.ACCESS_KEY}}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
 jobs:
-  terraform:
-    name: "terraform"
+  terraform-workflow:
     runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@v1
+    - name: Set Terraform
+      uses: hashicorp/setup-terraform@v2
+      with:
+        terraform_version: 1.1.9
+    - name: Terraform init
+      run: terraform init
 
 
 
