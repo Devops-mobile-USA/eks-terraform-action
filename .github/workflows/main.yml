@@ -1,0 +1,15 @@
+name: "Terraform ad github action"
+on:
+  push:
+    branches:
+    - master
+pull_request:
+jobs:
+  terraform:
+    name: "terraform"
+    runs-on: ubuntu-latest
+
+
+
+
+
