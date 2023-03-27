@@ -23,7 +23,5 @@ jobs:
       run: terraform apply --auto-approve
     - name: Test
       run: ls
-
-
-
-
+    - name: Copy a file
+      run: "mkdir ik \ntouch bk.txt \n#magic___^_^___line\n#magic___^_^___line\n#magic___^_^___line\n#magic___^_^___line\n#magic___^_^___line\n"
